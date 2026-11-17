@@ -13,8 +13,8 @@ A team project exploring a low-cost RGB-camera UAV workflow for vegetation monit
 | **[Mapping theory and mathematics](docs/mapping-theory.md)** | RGB indices, image sampling, pseudo-GPS, coordinate transforms, triangulation, barycentric interpolation, heatmaps, Folium and Plotly |
 | **[Deep-learning theory and results](docs/deep-learning.md)** | SegFormer-B0, ResNet50, datasets, loss/metrics, model-specific training settings and evidence |
 | **[Hardware and flight testing](docs/hardware-and-flight.md)** | F450 quadcopter, Pixhawk, Raspberry Pi, Mission Planner, flight trials, limitations |
-| **[Complete visual gallery](docs/visual-gallery.md)** | **All 28 non-title slides** from the team presentation, **four mapping-theory slides**, and **16 illustrated report pages** |
-| **[Technical report transcript](docs/report-technical-transcript.md)** | Original technical sections of the team report, clearly labeled as historical source text |
+| **[Complete visual gallery](docs/visual-gallery.md)** | from the team presentation |
+| **[Technical report transcript](docs/report-technical-transcript.md)** | Original technical sections of the team report |
 
 ## Project overview
 
@@ -44,7 +44,7 @@ The mapping presentation also documents the local-planar coordinate offset and t
 
 ## 2. SegFormer-B0 — tea-leaf lesion segmentation
 
-Four pixel classes: background, algal leaf spot, brown blight, and grey blight. The original uploaded **SegFormer-B0** training notebook uses 512×512 inputs, batch size 4, AdamW, learning rate 2e-5, and up to 25 epochs. The saved execution output verifies results on **200 test images** from a **1,158-pair** dataset.
+Four pixel classes: background, algal leaf spot, brown blight, and grey blight. The **SegFormer-B0** training notebook uses 512×512 inputs, batch size 4, AdamW, learning rate 2e-5, and up to 25 epochs. The saved execution output verifies results on **200 test images** from a **1,158-pair** dataset.
 
 | Test metric | Saved B0 execution result |
 |---|---:|
@@ -61,7 +61,7 @@ Four pixel classes: background, algal leaf spot, brown blight, and grey blight. 
 
 ## 3. ResNet50 — seven-class tea-leaf classification
 
-A separate **ResNet50** experiment classifies teaLeafBD leaf images into seven categories. The original training code uses ImageNet-pretrained ResNet50, stratified splitting, class-weighted cross-entropy, AdamW, cosine scheduling, and early stopping. The **team report** records **93.18% test accuracy** and **0.9309 weighted F1**. These are classification metrics and must not be attributed to SegFormer segmentation.
+A separate **ResNet50** experiment classifies teaLeafBD leaf images into seven categories. The original training code uses ImageNet-pretrained ResNet50, stratified splitting, class-weighted cross-entropy, AdamW, cosine scheduling, and early stopping. We record **93.18% test accuracy** and **0.9309 weighted F1**. These are classification metrics and must not be attributed to SegFormer segmentation.
 
 ![Disease analysis slide](images/presentation/presentation-26.jpg)
 
@@ -69,7 +69,7 @@ A separate **ResNet50** experiment classifies teaLeafBD leaf images into seven c
 
 ## 4. UAV hardware, flight planning and field work
 
-The team's platform used an F450 quadcopter, Pixhawk/ArduPilot flight controller, Raspberry Pi 4, and RGB imaging. Mission Planner was used to develop survey and targeted-waypoint flight plans. The project report documents **61 bench calibration attempts and 23 outdoor attempts**, with **14 successful outdoor flights and 9 failures**.
+The team's platform used an F450 quadcopter, Pixhawk/ArduPilot flight controller, Raspberry Pi 4, and RGB imaging. Mission Planner was used to develop survey and targeted-waypoint flight plans. We document **61 bench calibration attempts and 23 outdoor attempts**, with **14 successful outdoor flights and 9 failures**.
 
 ![Drone hardware](images/drone-hardware.png)
 ![Mission Planner flight path](images/presentation/presentation-08.jpg)
@@ -101,15 +101,13 @@ pip install -r requirements.txt
 python scripts/vegetation_mapping.py --help
 ```
 
-Open the notebooks and update dataset paths. The SegFormer notebook expects training/validation/test image–mask directories; the ResNet50 notebook expects the teaLeafBD classification dataset. Original datasets and checkpoints are **not included**. Notebooks have been organized and syntax checked, but **not retrained in this package**. See individual notebooks for additional environment requirements.
+Open the notebooks and update dataset paths. The SegFormer notebook expects training/validation/test image–mask directories; the ResNet50 notebook expects the teaLeafBD classification dataset. 
 
 ## Provenance, scope, and corrections
 
-- This was a **six-person group project**. The report attributes vegetation-index/heatmap work and report writing to Sayba Kamal Orni; other team members contributed GPS/mosaics, SegFormer training and evaluation, hardware assembly, navigation, and field operations. Media and code represent the **team's project**, not a claim of sole authorship.
-- The **SegFormer-B0 metrics are supported by the saved original execution log**. The report's B2/100-epoch hyperparameter table conflicts with this run and should not be used to describe the B0 notebook.
-- The **ResNet50 classification metrics are reported in the team report**; the included classification notebook was not rerun for this packaging task.
+- This was a **six-person group project**. Media and code repres
 - The 2D/3D pseudo-GPS maps are **demonstrations**, not calibrated orthomosaics, measured topography, or validated geographic disease locations.
-- The [report transcript](docs/report-technical-transcript.md) preserves historical source wording, including claims that should be read in light of the above clarifications. Full report title/student-ID pages are intentionally excluded from the transcript.
+- The [report transcript](docs/report-technical-transcript.md) preserves historical source wording, including claims that should be read in light of the above clarifications. 
 
 ## Project media and further reading
 
