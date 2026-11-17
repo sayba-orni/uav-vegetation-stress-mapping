@@ -1,6 +1,6 @@
 # Complete visual gallery
 
-Images are rendered from the team presentation, the mapping presentation, and selected illustrated pages of the project report. Original slide numbers are retained. These are **presentation figures**, not necessarily independent validation results.
+Images are rendered from the team presentation, the mapping presentation, and selected illustrated pages of the project report. Original slide numbers are retained. These are **presentation figures**.
 
 ## Main project presentation
 
