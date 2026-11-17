@@ -105,7 +105,7 @@ Open the notebooks and update dataset paths. The SegFormer notebook expects trai
 
 ## Provenance, scope, and corrections
 
-- This was a **six-person group project**. Media and code repres
+- This was a **six-person group project**. 
 - The 2D/3D pseudo-GPS maps are **demonstrations**, not calibrated orthomosaics, measured topography, or validated geographic disease locations.
 - The [report transcript](docs/report-technical-transcript.md) preserves historical source wording, including claims that should be read in light of the above clarifications. 
 
