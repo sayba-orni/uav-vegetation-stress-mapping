@@ -1,0 +1,22 @@
+Source: original uploaded Colab execution output for classification_segformer (1).ipynb
+Model: nvidia/segformer-b0-finetuned-ade-512-512
+Dataset image/mask pairs: train=759, valid=199, test=200
+Batch size: 4; maximum epochs: 25; image size: 512x512
+
+Epoch 024 | train_loss=0.0628 | val_loss=0.0685 | val_mean_dice=0.5289 | val_mean_iou=0.4604
+Saved best SegFormer model.
+Epoch 025 | train_loss=0.0611 | val_loss=0.0665 | val_mean_dice=0.5237 | val_mean_iou=0.4559
+Loaded best model from: /content/best_segformer_multiclass_leaf.pt
+Testing: 100%, 50/50 batches
+Test metrics mean:
+pixel_acc       0.977322
+mean_dice       0.684832
+mean_iou        0.657452
+dice_class_1    0.459425
+dice_class_2    0.796744
+dice_class_3    0.798326
+iou_class_1     0.453812
+iou_class_2     0.751132
+iou_class_3     0.767412
+
+Note: values are transcribed from user-supplied execution output; no retraining was performed in packaging.

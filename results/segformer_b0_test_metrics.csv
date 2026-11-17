@@ -1,0 +1,10 @@
+metric,test_mean
+pixel_acc,0.977322
+mean_dice,0.684832
+mean_iou,0.657452
+dice_class_1_algal_leaf_spot,0.459425
+dice_class_2_brown_blight,0.796744
+dice_class_3_grey_blight,0.798326
+iou_class_1_algal_leaf_spot,0.453812
+iou_class_2_brown_blight,0.751132
+iou_class_3_grey_blight,0.767412
