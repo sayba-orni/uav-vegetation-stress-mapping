@@ -19,4 +19,3 @@ iou_class_1     0.453812
 iou_class_2     0.751132
 iou_class_3     0.767412
 
-Note: values are transcribed from user-supplied execution output; no retraining was performed in packaging.
